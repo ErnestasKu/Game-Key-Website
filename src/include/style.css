@@ -1,0 +1,1131 @@
+:root {
+    --color1: #4a4a4a;
+    --color2: #333;
+    --color3: white;
+    --color4: #f4f4f9;
+
+    --color_primary: #d44423;
+    --color_primary_hover: #963019;
+    --color_secondary: #f2a900;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* index ------------------------------------------------------------------------ */
+.index-cover {
+    background-color: black;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    /* height: 100%; */
+    border-radius: 8px;
+}
+
+.index-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+    gap: 10px;
+}
+
+.index-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.index-game:hover {
+    transform: scale(1.05);
+}
+
+.index-game h2 {
+    font-size: 1.2rem;
+    overflow: hidden;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.index-game p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.index-game a {
+    display: inline-block;
+    /* align-self: flex-end; */
+    align-self: center;
+    text-align: center;
+    width: 100%;
+
+    padding: 4px 10px;
+    background-color: var(--color_primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.index-game a:hover {
+    background-color: var(--color_primary_hover);
+}
+
+
+/* search bar for mobile */
+@media (max-width: 767px) {
+    .index-box {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+
+/* pagination ------------------------------------------------------------- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: var(--color_primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: var(--color_primary_hover);
+}
+
+.pagination span {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.pagination a:disabled {
+    background-color: #ccc;
+    pointer-events: none;
+}
+
+/* other --------------------------------------------------------------- */
+.error-message {
+    color: #ff0000;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.page-title {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* main header ---------------------------------------------------------- */
+.main {
+    background-color: #333;
+    color: #fff;
+    /* height: 100px; */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    gap: 10px;
+    width: 100%;
+    /* flex: wrap; */
+}
+
+.main h1 {
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.main a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    height: 80px;
+    font-size: 1.2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: auto;
+}
+
+/* Navigation -------------------------------------------------------- */
+.under-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color_primary);
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+    height: 70px;
+}
+
+/* Search bar --------------------------------------------------------- */
+.search-container {
+    border-radius: 20px;
+    padding: 4px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.search-container-mobile {
+    background-color: black;
+    /* background-color: var(--color2); */
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-input {
+    margin: 8px;
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.search-button {
+    color: white;
+    padding: 4px 10px;
+    height: 36px;
+    font-weight: bold;
+    font-size: 0.8 rem;
+
+    background-color: var(--color_primary);
+    align-self: center;
+
+    margin-right: 8px;
+
+    border-radius: 6px;
+    /* border-color: var(--color_primary); */
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: var(--color_primary_hover);
+}
+
+.search-button .search-icon {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+/* search bar for mobile -------------------------------------- */
+.search-container-mobile {
+    display: none;
+}
+
+/* search bar for mobile */
+@media (max-width: 767px) {
+    .search-container-mobile {
+        display: block;
+    }
+
+    .search-container-desktop {
+        display: none;
+    }
+}
+
+/* Profile section positioning --------------------------------------- */
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* scale: 0.8; */
+    scale: 1;
+}
+
+.profile-icon {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.profile-link span {
+    margin-right: 6px;
+}
+
+.profile-link:hover {
+    color: var(--color_primary_hover);
+}
+
+/* profile drop down ----------------------------------------------- */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ddd;
+}
+
+/* Show dropdown menu on hover */
+.profile:hover .dropdown-menu {
+    display: block;
+}
+
+/* sign/log in ----------------------------------------------------- */
+/* Box styles */
+#box {
+    margin: 20px auto;
+    width: 300px;
+    background-color: var(--color3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="date"] {
+    font-family: Arial, sans-serif;
+    width: 100% !important;
+}
+
+textarea {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+
+    /* Disables resizing */
+    resize: none;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: var(--color_primary);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--color_primary_hover);
+}
+
+/* Game details ------------------------------------------------- */
+.box-game {
+    align-content: center;
+    margin: 20px auto;
+
+    max-width: 800px;
+    width: 100%;
+    background-color: var(--color3);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-details-container {
+    max-width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.game-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    background-color: var(--color_primary);
+    border-radius: 8px;
+
+    padding: 0 10px;
+}
+
+.game-details {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.game-cover {
+    background-color: white;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 8px;
+}
+
+.game-info {
+    flex-grow: 1;
+}
+
+.buy-button {
+    display: block;
+    text-align: center;
+    background-color: var(--color_primary);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.buy-button:hover {
+    background-color: var(--color_primary_hover);
+}
+
+/* game key list ------------------------------------------------ */
+.labels {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 0 12px;
+    margin-bottom: 10px;
+}
+
+.label {
+    flex: 1;
+    text-align: left;
+}
+
+.game-key-list-item {
+    /* align-items: center; */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 5px 12px;
+    background-color: #f9f9f9;
+}
+
+.seller,
+.price,
+.stock,
+.platform,
+.cart-button {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.seller a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color_primary)
+}
+
+.seller a:hover {
+    text-decoration: underline;
+    color: var(--color_primary_hover);
+}
+
+.cart-button button {
+    padding: 5px 20px;
+    background-color: var(--color_primary);
+    border-radius: 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-button button:hover {
+    background-color: var(--color_primary_hover);
+}
+
+@media (max-width: 767px) {
+    .game-details {
+        /* display: flexbox; */
+        flex-direction: column;
+    }
+
+    .game-cover {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .box-game {
+        padding: 0;
+    }
+
+    .game-title {
+        font-size: 1.5rem;
+    }
+
+    .cart-button button {
+        padding: 5px 5px;
+    }
+
+    .seller,
+    .price,
+    .stock,
+    .platform,
+    .cart-button {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* popup -------------------------------------------------------------- */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    position: relative;
+}
+
+.close-button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+#popup-message {
+    margin-top: 30px;
+    /* font-size: 20px; */
+
+    font-size: 0.9rem;
+}
+
+.close-button:hover {
+    color: #f44336;
+}
+
+/* cart --------------------------------------------------------------- */
+/* Cart container */
+.cart-container {
+    width: 80%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+.cart-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Cart items */
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cart-item-details p {
+    margin: 5px 0;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+}
+
+.remove-item {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.remove-item:hover {
+    text-decoration: underline;
+}
+
+/* Cart total */
+.cart-total {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+/* Checkout button */
+.checkout-button {
+    background-color: #6daf6f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.checkout-button:hover {
+    background-color: #83e288;
+}
+
+/* purchases ---------------------------------------------------------- */
+.purchase-history-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    max-width: 800px;
+    width: 100%;
+}
+
+.purchase-history-container ul {
+    margin-left: 20px;
+}
+
+.purchase-history-container ul li {
+    margin: 5px 0;
+}
+
+.order {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order h3 {
+    margin-top: 0;
+}
+
+/* my keys ---------------------------------------------------------- */
+.my-keys-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.my-keys-container ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 20px;
+    width: 800px;
+}
+
+.my-keys-container ul li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.my-keys-container ul li strong {
+    display: inline-block;
+    width: 150px;
+}
+
+.blurred-code {
+    filter: blur(6px);
+}
+
+.blurred-code:hover {
+    filter: blur(0px);
+}
+
+/* search items ------------------------------------------------------------------------ */
+.box-search {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+
+    background-color: var(--color3);
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.game-search-cover {
+    background-color: var(--color_primary);
+    padding: 10px;
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 8px;
+
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.game-search-cover:hover {
+    background-color: var(--color_primary_hover);
+}
+
+.game-search-details {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.game-serach-title {
+    color: var(--color_primary);
+    text-decoration: none;
+
+    max-width: 1000px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+
+    line-height: 1;
+    font-weight: bold;
+    font-size: 1.7rem;
+
+    overflow: hidden;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.game-serach-title:hover {
+    color: var(--color_primary_hover);
+}
+
+.game-serach-price {
+    font-size: 1.5rem;
+    align-self: flex-end;
+}
+
+/* search bar for mobile */
+@media (max-width: 767px) {
+    .game-serach-title {
+        font-size: 1rem;
+    }
+
+    .game-search-cover {
+        max-width: 86px;
+        max-height: 86px;
+    }
+
+    .game-search-details {
+        font-size: 0.7rem;
+    }
+}
+
+/* profile ------------------------------------------------------- */
+.profile-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.profile-name {
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    background-color: var(--color_primary_hover);
+    color: white !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.profile-info {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.profile-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.profile-info strong {
+    color: #2c3e50;
+}
+
+.profile-actions {
+    text-align: center;
+}
+
+.profile-actions a {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.profile-actions a:hover {
+    background-color: #2980b9;
+}
+
+.profile-actions a:active {
+    background-color: #1f6a8b;
+}
+
+.profile-container p {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* shop -------------------------------------------------------------- */
+.shop-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.shop-name {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    background-color: var(--color_primary_hover);
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    color: white;
+}
+
+.review-rating {
+    text-align: center;
+    font-size: 2.5rem !important;
+    font-family: Verdana;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.rating-form {
+    margin-bottom: 30px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.rating-form input,
+.rating-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.rating-form button {
+    background-color: var(--color_primary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.rating-form button:hover {
+    background-color: var(--color_primary_hover);
+}
+
+.reviews-section {
+    margin-top: 30px;
+}
+
+.review-header {
+    background-color: #333;
+    color: white !important;
+    text-align: center;
+    padding: 2px;
+    border-radius: 10px 10px 0 0;
+}
+
+.reviews-section h2 {
+    font-size: 1.5rem;
+    /* margin-bottom: 20px; */
+    color: #333;
+}
+
+.review-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.review-item p strong a {
+    font-size: 1.2rem;
+    color: var(--color_primary);
+}
+
+.review-item small {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.review-item p {
+    margin: 0px 10px;
+}
+
+/* user manager ----------------------------------------------------- */
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.manager table {
+    /* max-width: 100px; */
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.manager th,
+td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.manager th {
+    background-color: #333;
+    color: white;
+}
+
+.manager tr:hover {
+    background-color: #f1f1f1;
+}
+
+.manager .submit-btn,
+.delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* width: 100%; */
+}
+
+.manager .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.manager .submit-btn:hover {
+    background-color: #38813b;
+}
+
+.manager .delete-btn {
+    background-color: var(--color_primary);
+    color: white;
+}
+
+.manager .delete-btn:hover {
+    background-color: var(--color_primary_hover);
+}
+
+/* add keys/games ------------------------------------------------- */
+.form-container {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container select {
+    /* max-width: 100%; */
+    width: 100%;
+}
+
+.form-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container .submit-btn {
+    background-color: var(--color_primary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.form-container .submit-btn:hover {
+    background-color: var(--color_primary_hover);
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* tab thing -------------------------------------------- */
+.tab-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab-button.active {
+    background-color: var(--color_primary_hover);
+    color: #fff;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
